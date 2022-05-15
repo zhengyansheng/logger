@@ -13,19 +13,20 @@ var sugarLogger *zap.SugaredLogger
 type ZapLogger struct {
 	LogFile    string
 	Level      string
-	MaxSize    int  // 每个日志文件保存的最大尺寸 单位：M
+	MaxSize    int  // 每个日志文件保存的最大文件大小 单位：M
 	MaxAge     int  // 文件最多保存多少天
 	MaxBackups int  // 日志文件最多保存多少个备份
 	Compress   bool // 是否压缩
 }
 
-func NewZapLogger(logFile, logLevel string, maxSize, maxBackups, maxAge int) *ZapLogger {
+// NewZapLogger 创建 ZapLogger 对象
+func NewZapLogger(logFile, logLevel string, maxSize int) *ZapLogger {
 	return &ZapLogger{
 		LogFile:    logFile,
 		Level:      logLevel,
 		MaxSize:    maxSize,
-		MaxBackups: maxBackups,
-		MaxAge:     maxAge,
+		MaxBackups: 10,
+		MaxAge:     3,
 		Compress:   false,
 	}
 }
