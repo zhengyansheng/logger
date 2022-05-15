@@ -93,6 +93,11 @@ func Error(args ...interface{}) {
 	sugarLogger.Error(args)
 }
 
+// Fatal ...
+func Fatal(args ...interface{}) {
+	sugarLogger.Fatal(args)
+}
+
 // Debugf ...
 func Debugf(msg string, args ...interface{}) {
 	sugarLogger.Debugf(msg, args...)
@@ -111,4 +116,9 @@ func Warnf(msg string, args ...interface{}) {
 // Errorf ...
 func Errorf(msg string, args ...interface{}) {
 	sugarLogger.Errorf(msg, args...)
+}
+
+// Fatalf ...
+func Fatalf(msg string, args ...interface{}) {
+	sugarLogger.Fatalf(msg, args...)
 }
