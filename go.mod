@@ -1,4 +1,4 @@
-module logger
+module github.com/zhengyansheng/logger
 
 go 1.18
 
